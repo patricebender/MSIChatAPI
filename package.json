@@ -1,0 +1,30 @@
+{
+  "name": "chatme",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/GitP4tt/chatme.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/GitP4tt/chatme/issues"
+  },
+  "homepage": "https://gitlab.com/GitP4tt/chatme#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  },
+  "engines": {
+   "node": "8.1.1",
+   "npm": "5.0.3"
+  },
+  "scripts": {
+    "start": "node index.js"
+  }
+}
