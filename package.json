@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -18,13 +18,11 @@
   },
   "homepage": "https://gitlab.com/GitP4tt/chatme#readme",
   "dependencies": {
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "socket.io": "^2.2.0"
   },
   "engines": {
-   "node": "8.1.1",
-   "npm": "5.0.3"
-  },
-  "scripts": {
-    "start": "node index.js"
+    "node": "8.1.1",
+    "npm": "5.0.3"
   }
 }
