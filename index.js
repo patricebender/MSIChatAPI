@@ -1,19 +1,28 @@
-const express = require("express");
-const app = express();
-const http = require('http').Server(app);
+const app = require("express")();
 
-const io = require('socket.io')(http);
+const PORT = process.env.PORT || 3000;
 
-
-app.get("/", (req,res) => {
-	res.send({hello: "World"});
-});
-
-io.on('connection', function(socket){
-  console.log('an user connected');
-});
-
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, function() {
+const server = app.listen(PORT, function() {
 	console.log(`App listening on ${PORT}`);
 });
+
+
+const io  = require('socket.io').listen(server);
+
+
+io.on('connection', function(socket){
+
+	socket.on("join_chat", (data) => {
+		console.log(`${data.nick} joined`)
+	});
+
+	socket.on("disconnect", () => {
+		console.log(`someone left chat`)
+	});
+
+	socket.on("message", (msg) => {
+		socket.broadcast.emit("newMessage", msg)
+	});
+
+});
+
