@@ -26,7 +26,7 @@ io.on('connection', function (socket) {
 
 	// broadcast message event to other clients
 	socket.on("message", (msg) => {
-		socket.broadcast.emit("newMessage", msg)
+		socket.broadcast.emit("message", msg)
 	});
 
 });
